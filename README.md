@@ -15,18 +15,22 @@ Convolution appears ubiquitously in applications such as filtering, statistical 
 
 ### 2.1 Traditional Definition of Convolution
 Mathematically, the convolution of two functions $f(t)$ and $g(t)$ is defined as:
+
 $$
 (f * g)(t) = \int_{-\infty}^\infty f(\tau) g(t - \tau) \, d\tau
 $$
+
 This equation is often interpreted as blending or smoothing two functions. However, convolution fundamentally involves two key operations:
 1. **Domain Transformation**: The resultant domain is the sum of the domains of the convolved functions, $t = t_1 + t_2$.
 2. **Multiplication**: The element-wise multiplication $f(\tau) g(t - \tau)$ occurs at every point in the overlapping domains during integration.
 
 ### 2.2 New Domain: $t_1 + t_2$
 Convolution transforms two independent domains, $t_1$ and $t_2$, into a combined domain:
+
 $$
 t = t_1 + t_2
 $$
+
 This combined domain reflects how inputs interact across their respective time intervals, offering a novel perspective distinct from transformations like the Fourier transform, which shifts to the frequency domain.
 
 ---
@@ -35,16 +39,20 @@ This combined domain reflects how inputs interact across their respective time i
 
 ### 3.1 Addition of Random Variables
 Convolution plays a central role in probability theory as it represents the addition of independent random variables. If $X$ and $Y$ are independent random variables with probability density functions (PDFs) $f_X(x)$ and $f_Y(y)$, the PDF of their sum $Z = X + Y$ is:
+
 $$
 f_Z(z) = \int_{-\infty}^\infty f_X(\tau) f_Y(z - \tau) \, d\tau
 $$
+
 Here, convolution transforms the individual domains of $X$ and $Y$ into the combined domain of $Z$, while the multiplication $f_X(\tau) f_Y(z - \tau)$ captures how the probabilities combine.
 
 ### 3.2 Convergence to the Normal Distribution
 Repeated convolution of independent random variables leads to the Central Limit Theorem (CLT), which states that the sum of a large number of independent and identically distributed random variables approaches a normal distribution. Mathematically:
+
 $$
 Z_n = \frac{1}{\sqrt{n}} \sum_{i=1}^n X_i \sim \mathcal{N}(\mu, \sigma^2)
 $$
+
 Convolution smooths and reshapes the resulting distribution by combining the overlapping contributions of $f_X$ and $f_Y$ across their domains, eventually producing the characteristic bell curve of the normal distribution.
 
 ---
